@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PandaFi ($PFT) - Join the Presale">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>PandaFi ($PFT) - Presale</title>
+    <style>
+        :root {
+            --main-color: #6b44db;
+            --text-color: #fff;
+            --bg-color: #1e1c2a;
+            --container-width: 1200px;
+            --header-height: 80px;
+            --spacing: 2rem;
+        }
+
+        .funnel-sans-unique {
+        font-family: "Funnel Sans", serif;
+        font-optical-sizing: auto;
+        font-weight: bold 700;
+        font-style: normal;
+        }
+
+        * {
+            font-family: "Funnel Sans", serif;
+        }
+
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            height: 120px;
+            background-color: rgba(30, 28, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .header.scroll-down {
+            transform: translateY(-100%);
+        }
+
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 120px;
+            height: 100%;
+        }
+
+        .logo img {
+            height: 80px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--main-color);
+        }
+
+        
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .nav-toggle span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--text-color);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+        
+        .btn-primary {
+            background: var(--main-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(107, 68, 219, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--main-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--main-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(107, 68, 219, 0.3);
+        }
+
+        /* Presale specific styles */
+        .presale {
+            padding: calc(var(--header-height) + 2rem) 0 var(--spacing);
+        }
+        
+        .presale-hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        .presale-hero h1 {
+            font-size: 2.5rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .presale-hero p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .presale-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .stat-box {
+            background: rgba(107, 68, 219, 0.1);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .stat-box h3 {
+            font-size: 2rem;
+            color: var(--main-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-box p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .presale-form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(107, 68, 219, 0.1);
+            border-radius: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid rgba(107, 68, 219, 0.3);
+            border-radius: 0.5rem;
+            background: rgba(30, 28, 42, 0.8);
+            color: var(--text-color);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--main-color);
+        }
+
+        .token-calculator {
+            margin-top: 0.8rem;
+            padding: 0.8rem;
+            background: rgba(107, 68, 219, 0.05);
+            border-radius: 0.5rem;
+        }
+
+        .buy-button {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--main-color);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background: #5835b0;
+        }
+
+        .presale-info {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .info-box {
+            padding: 1.5rem;
+            background: rgba(107, 68, 219, 0.1);
+            border-radius: 0.5rem;
+        }
+
+        .info-box h3 {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .info-box li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .info-box li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--main-color);
+        }
+
+        /* Footer styles */
+        .footer {
+            background: rgba(107, 68, 219, 0.1);
+            padding: 4rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .footer h4 {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer a {
+            color: var(--text-color);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .footer a:hover {
+            opacity: 1;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Mobile responsive styles */
+        @media (max-width: 992px) {
+            .presale-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: var(--header-height);
+                left: 0;
+                width: 100%;
+                background: rgba(30, 28, 42, 0.95);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1rem;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            .nav-menu.active {
+                transform: translateX(0);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .presale-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .presale-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header" class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/PandaFi_Logo.svg" alt="PandaFi Logo" width="50" height="50">
+            </a>
+            <nav class="nav">
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html #what-is-panda">What is $PFT</a></li>
+                    <li><a href="index.html #tokenomics">Tokenomics</a></li>
+                    <li><a href="index.html #roadmap">Roadmap</a></li>
+                    <li><a href="index.html #redistribution">Fee Distribution</a></li>
+                    <li><a href="whitepaper.html">Whitepaper</a></li>
+                    <li><a href="presale.html" class="btn-primary">BUY $PFT</a></li>
+                    <li><a href="rewards.html" class="btn-secondary">REWARDS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="presale">
+            <div class="container">
+                <div class="presale-hero">
+                    <h1>Join the PandaFi Presale</h1>
+                    <p>Be among the first to own $PFT tokens and become part of our growing community. Early investors get exclusive benefits and the best token prices.</p>
+                </div>
+
+                <div class="presale-stats">
+                    <div class="stat-box">
+                        <h3>210M</h3>
+                        <p>Tokens Available</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>0.1</h3>
+                        <p>USDC per Token</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Solana</h3>
+                        <p>Blockchain</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Phantom</h3>
+                        <p>Needed wallet</p>
+                    </div>
+                </div>
+
+                <div class="presale-form">
+                    <div class="form-group">
+                        <label for="wallet">Wallet Address</label>
+                        <input type="text" id="wallet" placeholder="Enter your Solana wallet address">
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount (USDC)</label>
+                        <input type="number" id="amount" placeholder="Enter amount in USDC" min="10" max="100">
+                        <div class="token-calculator">
+                            You will receive: <strong>0 $PFT</strong>
+                        </div>
+                    </div>
+                    <button class="buy-button">Buy $PFT Tokens</button>
+                </div>
+
+                <div class="presale-info">
+                    <div class="info-box">
+                        <h3>How to Participate</h3>
+                        <ul>
+                            <li>Connect your Phantom wallet</li>
+                            <li>Make sure you have USDC on Solana Chain in your wallet</li>
+                            <li>Enter your wallet address</li>
+                            <li>Enter the amount of USDC you want to invest</li>
+                            <li>Cick "Buy $PFT"</li>
+                            <li>Sign the transaction in your Phantom wallet browser extension</li>
+                            <li>Receive your $PFT tokens instantly</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h3>Benefits</h3>
+                        <ul>
+                            <li>Hold the coin at the starting price guaranteed</li>
+                            <li>Early investor rewards by being registered to the Airdrop</li>
+                            <li>Start getting passive income from 1% fee of next presale buyers</li>
+                            <li>Community governance rights</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="images/panda_logo.png" alt="PandaFi Footer Logo" width="100" height="100">
+                    <p>PandaFi ($PFT)<br>BUY, HODL & EARN</p>
+                </div>
+                <div class="footer-sitemap">
+                    <h4>Site Map</h4>
+                    <ul>
+                        <li><a href="index.html #what-is-panda">What is $PFT</a></li>
+                        <li><a href="index.html #tokenomics">Tokenomics</a></li>
+                        <li><a href="index.html #roadmap">Roadmap</a></li>
+                        <li><a href="index.html #redistribution">Fee Distribution</a></li>
+                        <li><a href="whitepaper.html">Whitepaper</a></li>
+                        <li><a href="presale.html">BUY $PFT</a></li>
+                        <li><a href="rewards.html">REWARDS</a></li>
+                    </ul>
+                </div>
+                <div class="footer-listings">
+                    <h4>Smart Links</h4>
+                    <ul>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer">Raydium</a></li>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer">Dexscreener</a></li>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer">Contract</a></li>
+                        <li><a href="whitepaper.html">Whitepaper</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Socials</h4>
+                    <div class="social-links">
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter">𝕏</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Telegram">📱</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Discord">💬</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll behavior
+        let lastScroll = 0;
+        const header = document.querySelector('.header');
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                header.classList.remove('scroll-down');
+                return;
+            }
+            
+            if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
+                header.classList.add('scroll-down');
+            } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
+                header.classList.remove('scroll-down');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Mobile navigation
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Token calculator
+        const amountInput = document.getElementById('amount');
+        const tokenCalculator = document.querySelector('.token-calculator strong');
+        
+        amountInput.addEventListener('input', (e) => {
+            const amount = parseFloat(e.target.value) || 0;
+            const tokens = (amount / 0.1).toFixed(0);
+            tokenCalculator.textContent = `${tokens} $PFT`;
+        });
+    </script>
+</body>
+</html>
