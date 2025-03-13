@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AInnov - Intelligence Artificielle Innovante</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="noise"></div>
+    <canvas id="webgl"></canvas>
+
+    <nav id="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="10" y="10" width="35" height="35" rx="4" fill="currentColor" class="logo-square"/>
+                    <rect x="55" y="10" width="35" height="35" rx="4" fill="currentColor" class="logo-square"/>
+                    <rect x="10" y="55" width="35" height="35" rx="4" fill="currentColor" class="logo-square"/>
+                    <rect x="55" y="55" width="35" height="35" rx="4" fill="currentColor" class="logo-square"/>
+                </svg>
+                <span>AInnov</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#solutions" data-text="Solutions">Solutions</a></li>
+                <li><a href="#work" data-text="Réalisations">Réalisations</a></li>
+                <li><a href="#contact" data-text="Contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="main-section">
+            <div class="container">
+                <div class="main-content">
+                    <h1 class="main-text split-text">
+                        Nous façonnons le futur avec l'intelligence artificielle
+                    </h1>
+                    <p class="main-description split-text">
+                        Créez des agents IA autonomes qui transforment votre entreprise
+                    </p>
+                    <div class="cta-wrapper">
+                        <a href="#contact" class="cta-button">
+                            <span class="cta-text">Démarrer un projet</span>
+                            <span class="cta-icon">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-line"></div>
+                <span>Scroll</span>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item" data-speed="1.1">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Satisfaction Client</div>
+                    </div>
+                    <div class="stat-item" data-speed="1.2">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Projets Réalisés</div>
+                    </div>
+                    <div class="stat-item" data-speed="1.3">
+                        <div class="stat-number">50M+</div>
+                        <div class="stat-label">Données Analysées</div>
+                    </div>
+                    <div class="stat-item" data-speed="1.4">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support Disponible</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solutions" class="solutions">
+            <div class="container">
+                <h2 class="section-title split-text">Solutions</h2>
+                <div class="solutions-grid">
+                    <div class="solution-card" data-speed="1.1">
+                        <div class="solution-content">
+                            <span class="solution-number">01</span>
+                            <h3>Agents Conversationnels</h3>
+                            <p>Intelligence artificielle avancée pour une communication naturelle et efficace.</p>
+                        </div>
+                        <div class="solution-hover"></div>
+                    </div>
+                    <div class="solution-card" data-speed="1.2">
+                        <div class="solution-content">
+                            <span class="solution-number">02</span>
+                            <h3>Automatisation</h3>
+                            <p>Optimisation des processus métier grâce à nos agents autonomes.</p>
+                        </div>
+                        <div class="solution-hover"></div>
+                    </div>
+                    <div class="solution-card" data-speed="1.3">
+                        <div class="solution-content">
+                            <span class="solution-number">03</span>
+                            <h3>Analyse Prédictive</h3>
+                            <p>Anticipation des tendances et prise de décision éclairée.</p>
+                        </div>
+                        <div class="solution-hover"></div>
+                    </div>
+                    <div class="solution-card" data-speed="1.4">
+                        <div class="solution-content">
+                            <span class="solution-number">04</span>
+                            <h3>Innovation IA</h3>
+                            <p>Solutions sur mesure adaptées à vos besoins spécifiques.</p>
+                        </div>
+                        <div class="solution-hover"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="work">
+            <div class="container">
+                <h2 class="section-title split-text">Réalisations</h2>
+                <div class="work-grid">
+                    <div class="work-item" data-speed="1.1">
+                        <div class="work-image">
+                            <img src="https://images.unsplash.com/photo-1693922874336-bf7b2d6256bb?q=80&w=1920" alt="Projet 1" loading="lazy">
+                        </div>
+                        <div class="work-content">
+                            <h3>Projet Alpha</h3>
+                            <p>Intelligence artificielle & Automatisation</p>
+                        </div>
+                    </div>
+                    <div class="work-item" data-speed="1.2">
+                        <div class="work-image">
+                            <img src="https://images.unsplash.com/photo-1692427069899-f9a904b90a3c?q=80&w=1920" alt="Projet 2" loading="lazy">
+                        </div>
+                        <div class="work-content">
+                            <h3>Projet Beta</h3>
+                            <p>Analyse prédictive & Big Data</p>
+                        </div>
+                    </div>
+                    <div class="work-item" data-speed="1.3">
+                        <div class="work-image">
+                            <img src="https://images.unsplash.com/photo-1692607431253-e9d7c84a8592?q=80&w=1920" alt="Projet 3" loading="lazy">
+                        </div>
+                        <div class="work-content">
+                            <h3>Projet Gamma</h3>
+                            <p>Agents conversationnels avancés</p>
+                        </div>
+                    </div>
+                    <div class="work-item" data-speed="1.4">
+                        <div class="work-image">
+                            <img src="https://images.unsplash.com/photo-1693240510452-0df194c85511?q=80&w=1920" alt="Projet 4" loading="lazy">
+                        </div>
+                        <div class="work-content">
+                            <h3>Projet Delta</h3>
+                            <p>Innovation & Recherche IA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <h2 class="section-title split-text">Contact</h2>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label>Nom</label>
+                            <input type="text" required>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" required>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea rows="5" required></textarea>
+                            <div class="form-line"></div>
+                        </div>
+                        <button type="submit" class="submit-button">
+                            <span class="button-text">Envoyer</span>
+                            <span class="button-icon">→</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <svg width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="10" width="35" height="35" rx="4" fill="currentColor" class="logo-square"/>
+                            <rect x="55" y="10" width="35" height="35" rx="4" fill="currentColor" class="logo-square"/>
+                            <rect x="10" y="55" width="35" height="35" rx="4" fill="currentColor" class="logo-square"/>
+                            <rect x="55" y="55" width="35" height="35" rx="4" fill="currentColor" class="logo-square"/>
+                        </svg>
+                        <span>AInnov</span>
+                    </div>
+                    <p>Solutions d'intelligence artificielle innovantes pour entreprises</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="#solutions">Solutions</a></li>
+                        <li><a href="#work">Réalisations</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>contact@ainnov.fr</li>
+                        <li>+33 1 23 45 67 89</li>
+                        <li>Paris, France</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Légal</h3>
+                    <ul>
+                        <li><a href="#">Mentions Légales</a></li>
+                        <li><a href="#">Politique de Confidentialité</a></li>
+                        <li><a href="#">Conditions d'Utilisation</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
