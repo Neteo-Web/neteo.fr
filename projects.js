@@ -21,7 +21,7 @@ const projects = [
         description: "Exemple de portfolio artistique",
         image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400&h=300&fit=crop",
         path: "./projects/exemple_portfolio_artistique/index.html"  // Projet local
-    },
+    }
 
     //{
         //id: 4,
