@@ -23,13 +23,13 @@ const projects = [
         path: "./projects/exemple_portfolio_artistique/index.html"  // Projet local
     },
 
-    {
-        id: 4,
-        title: "Site Moderne d'Intelligence Artificielle",
-        description: "Exemple de site moderne d'une société d'IA",
-        image: ".projects/logos/Ainnov.png",
-        path: "./projects/ainnov/index.html"  // Projet local
-    }
+    //{
+        //id: 4,
+        //title: "Site Moderne d'Intelligence Artificielle",
+        //description: "Exemple de site moderne d'une société d'IA",
+        //image: ".projects/logos/Ainnov.png",
+        //path: "./projects/ainnov/index.html"  // Projet local
+    //}
 ];
 
 // Données des logos
